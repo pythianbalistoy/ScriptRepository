@@ -1,0 +1,9 @@
+SELECT * FROM agent WHERE NAME LIKE '%checho01.chssql%'    --5662
+SELECT * FROM handler WHERE Lower(handler_name) LIKE '%checho01%'
+SELECT * FROM handler WHERE handler_id = 5787
+-- lower(handler_NAME) LIKE '%vallaps%' OR Lower(handler_name) LIKE  '%helpstar%'
+
+SELECT * FROM handler_variable WHERE handler_id = 5661 -- 10.102.18.181
+SELECT * FROM handler_variable WHERE handler_id = 5787
+update agent set handler_id = 5787 WHERE agent_id = 5662 AND handler_id = 5661;
+COMMIT;
