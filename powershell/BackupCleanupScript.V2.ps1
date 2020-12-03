@@ -1,12 +1,12 @@
 ﻿param(
        [string]$debugmode = 'Y',
        [string]$storageAccount = 'uwsesqlbackups',
-       [string]$storageKey = 'MI1K3owap4lq7rWAeYLHy5IvHgq5lSpoGh7P093s3fwCSQ8PAiU4tj2L4oZ4SRlQjtIsoy0QlfJdgbOODm02Zg==',
-       [string]$blobContainer = 'backup-uw-se-sql-new',
+       [string]$storageKey = '',
+       [string]$blobContainer = '',
        [string]$storageAssemblyPath = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\Binn\Microsoft.WindowsAzure.Storage.dll',
        [int] $CleanupTime =  192, #192 hours = 8 days
-       [String]$SQLInstance = 'UW-SE-SQL-01',
-       [string]$servers= 'UW-SE-SQL-01,UW-SE-SQL-02'
+       [String]$SQLInstance = '',
+       [string]$servers= ''
 )
 
 $CleanupTime = $CleanupTime * -1
