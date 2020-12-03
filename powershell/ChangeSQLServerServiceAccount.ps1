@@ -4,7 +4,7 @@ write-output "Applying to servers listed in $Serverlistfile"
 foreach($server in $servers)
 {
 $NewServiceAccount='.\TestServiceAccount'
-$NewPassword = "Pythian4us!"
+$NewPassword = ""
 $services = get-wmiObject win32_service -computername $server | ?{($_.name -like 'MSSQLSERVER' -or $_.Name -like 'MSSQL$*' -or $_.Name -like 'SQLSERVERAGENT' -or $_.Name -like 'SQLAGENT*') -and $_.StartMode -notlike 'Disabled' }  | sort-object $_.Name -Descending
 
 $tabname= "Services"
